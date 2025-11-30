@@ -1,3 +1,5 @@
+# Версия 2.0.0 - улучшенная система цен со скидками
+
 from base_calculator import BasePriceCalculator
 from elevator_calculator import ElevatorCalculator
 from manual_calculator import ManualLiftCalculator
