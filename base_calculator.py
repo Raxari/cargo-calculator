@@ -1,11 +1,14 @@
 class BasePriceCalculator:
     def calculate_base_price(self, weight):
-        # НОВАЯ ЛОГИКА - УВЕЛИЧИЛИ ЦЕНЫ (конфликт!)
+        # ОБЪЕДИНЕННАЯ ЛОГИКА: новые цены + система скидок
         if weight <= 50:
-            return 350
+            price = 350
         elif weight <= 100:
-            return 1200 
+            price = 1200
         elif weight <= 300:
-            return 2500
+            price = 2500
+            if weight > 200:
+                price = int(price * 0.9)  # 10% скидка
         else:
             raise ValueError("Вес превышает максимально допустимый")
+        return price
